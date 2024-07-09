@@ -31,12 +31,18 @@ async function run() {
         },
         body:d3
     }).then(xl=>xl.text());
-    ls=/\/(.*?)"/g.exec(x);
-    ls= ls==null ? null:ls[1];
-    console.log(`Url Found!: ${ls}`);
-    ul=ho+ls;
-    console.log(ul);
-    mdv.style.background="green";
+    ls=x.match(/href="\/(.*?)"/g);
+    ls=ls.find(r=>r.includes("open"));
+    ls=ls.replace(/href=|"/g,"");
+    if(ls==null){
+      alert("sorry finding err!");
+      mdv.style.background="brown";
+    }else{
+     console.log(`Url Found!: ${ls}`);
+     ul=ho+ls;
+     console.log(ul);
+     mdv.style.background="green";
+    }
   }
 }
 function start(){
