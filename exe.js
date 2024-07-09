@@ -45,6 +45,7 @@ async function run() {
      console.log(`Url Found!: ${ls}`);
      ul=ho+ls;
      console.log(ul);
+     location.href=ul;
      mdv.style.background="green";
     }
   }
