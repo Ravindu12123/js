@@ -1,10 +1,15 @@
+window.getCookie = function(name) {
+  var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  if (match){ return match[2]}else{return null;}
+}
 async function run() {
     var getUrl = window.location;
     var ho = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
     console.log(ho);
-    tgg=document.cookie.split(";");
-    tgf=tgg.find(er=>er.includes("tp"));
-    tgp=tgf.split("=")[1];
+    tgp=await getCookie("tp");
+    if(tgp==null){
+        alert("tp not in cookies");
+    }else{
     d3=`newwpsafelink4=${tgp}`;
     console.log(tgp,d3);
     console.log('fetching!!!!!');
@@ -21,4 +26,5 @@ async function run() {
     console.log(`Url Found!: ${ls}`);
     ul=ho+ls;
     console.log(ul);
-          }
+    }
+}
