@@ -5,7 +5,7 @@ async function run() {
     tgg=document.cookie.split(";");
     tgf=tgg.find(er=>er.includes("tp"));
     tgp=tgf.split("=")[1];
-    d3=`newwpsafelink4=${tg}`;
+    d3=`newwpsafelink4=${tgp}`;
     x=await fetch(ho,{
         method:'POST',
         headers:{
