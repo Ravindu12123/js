@@ -2,11 +2,13 @@ window.getCookie = function(name) {
   var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
   if (match){ return match[2]}else{return null;}
 }
+
 var mdv=null;
 async function run() {
+    mdv.style.background="orange";
     var getUrl = window.location;
     var ho = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-    console.log(ho);
+    console.log(ho);var tgp;
     tgp=await getCookie("tp");
     if(tgp==null){
         mdv.style.background="blue";
@@ -17,6 +19,8 @@ async function run() {
         }else{
           nurl=new URL(inu);
           tgp=nurl['pathname'].replace("/","");
+          console.log("tp found from given url!",tgp);
+          
           mdv.style.background="orange";
         }
     }else{
