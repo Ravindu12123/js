@@ -1,9 +1,9 @@
-var sts=0;mc=null;var nlg;var ho;
+var sts=0;mc=null;var nlg;
 window.lg=function (nv) {
     nlg.innerText+=`${nv}\n`;
 }
 
-async function runE() {
+async function runE(getUrl) {
     mdv.style.background="orange";
     getUrl = window.location;
     var ho = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
@@ -57,6 +57,9 @@ async function Allg() {
     vl=document.querySelector('.tal').value;
     console.log(vl);
     uls=vl.match(/http(.*?)( |\n|\r)/g);
+    if (uls==null) {
+        alert("no urls!!");
+    }else{
     console.log(uls);
     for(i=0;i<uls.length;){
        Ul=new URL(uls[i]);
@@ -74,7 +77,7 @@ async function Allg() {
            lg("system err!!!");
        }
     }
-    
+    }
 }
 
 window.getCookie = function(name) {
@@ -131,7 +134,7 @@ async function run() {
 }
 function start(){
    st=document.createElement('style');
-   st.innerHTML=`.cco{z-index:9999999;}.fsb{position:fixed;width:50px;height:50px;border-radius:50%;background:red;top:250px;right:100px;}.fsb:hover{background:orange;}.tbl{background:black;color:white;position:fixed;width:100%;max-height:200px;font-size:20px;font-weight:900;bottom:0px;overflow-y:scroll;z-index:99999;}.tal{width:100%;background:white;color:black;height:200px;z-index:99999;}.stb{background:black;color:white;border-radius:5px;font-weight:900;width:30%;text-align:center;z-index:99999;}.stb:hover{background:white;color:red;}`;
+    st.innerHTML=`.cco{z-index:999999;}.fsb{position:fixed;width:50px;height:50px;border-radius:50%;background:red;top:250px;right:100px;}.fsb:hover{background:orange;}.tbl{background:black;color:white;position:fixed;width:100%;max-height:200px;font-size:20px;font-weight:900;bottom:0px;overflow-y:scroll;}.tal{width:100%;background:white;color:black;height:200px;}.stb{background:black;color:white;border-radius:5px;font-weight:900;width:30%;text-align:center;}.stb:hover{background:white;color:red;}.inp{position:fixed;top:0px;width:100%;height:auto;}`;
    document.head.appendChild(st);
    dv=document.createElement('div');
    dv.className='cco';
