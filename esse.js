@@ -67,7 +67,7 @@ async function Allg() {
        pn=Ul['pathname'].replace("/","");
        document.cookie=`tp=${pn}`;
        r=await runE(Ul);
-       mj=sleep(10000);
+       mj=await sleep(5000);
        if(r==1){
          xp=await confirm("next?");
          if(xp==true){
