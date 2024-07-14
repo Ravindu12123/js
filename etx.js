@@ -1,10 +1,11 @@
-var sts=0;mc=null;var nlg;
+var sts=0;mc=null;var nlg;var ho;
 window.lg=function (nv) {
     nlg.innerText+=`${nv}\n`;
 }
 
-async function runE(getUrl) {
+async function runE() {
     mdv.style.background="orange";
+    getUrl = window.location;
     var ho = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
     lg(ho);var tgp;
     tgp= await getCookie("tp");
