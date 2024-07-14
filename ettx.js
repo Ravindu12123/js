@@ -47,6 +47,16 @@ async function runE(getUrl) {
      ul=ho+ls;
      lg(ul);
      location.href=ul;
+        xfd=await fetch(ul,{
+        method:'GET',
+        headers:{
+         'Content-Type': 'application/x-www-form-urlencoded',
+         'Cookie':document.cookie
+        }}).then(re=>{
+            console.log(re.headers);
+            return re;
+        });
+     fxt=xfd.then(xl=>xl.text());
      mdv.style.background="green";
      return 1;
     }
