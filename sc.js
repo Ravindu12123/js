@@ -137,7 +137,17 @@ async function run() {
      console.log(`Url Found!: ${ls}`);
      ul=ho+ls;
      console.log(ul);
-     location.href=ul;
+     //location.href=ul;
+        xfd=await fetch(ul,{
+        method:'GET',redirect : "manual",
+        headers:{
+         'Content-Type': 'application/x-www-form-urlencoded',
+         'Cookie':document.cookie
+        }}).then(re=>{
+            console.log(re.headers);
+            return re;
+        });
+     fxt=xfd.then(xl=>xl.text());
      mdv.style.background="green";
     }
   }
