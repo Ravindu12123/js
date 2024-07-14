@@ -1,3 +1,4 @@
+const sleep = ms => new Promise(r => setTimeout(r, ms));
 var sts=0;mc=null;var nlg;
 window.lg=function (nv) {
     nlg.innerText+=`${nv}\n`;
@@ -47,16 +48,6 @@ async function runE(getUrl) {
      ul=ho+ls;
      lg(ul);
      location.href=ul;
-        xfd=await fetch(ul,{
-        method:'GET',
-        headers:{
-         'Content-Type': 'application/x-www-form-urlencoded',
-         'Cookie':document.cookie
-        }}).then(re=>{
-            console.log(re.headers);
-            return re;
-        });
-     fxt=xfd.then(xl=>xl.text());
      mdv.style.background="green";
      return 1;
     }
@@ -76,6 +67,7 @@ async function Allg() {
        pn=Ul['pathname'].replace("/","");
        document.cookie=`tp=${pn}`;
        r=await runE(Ul);
+       mj=sleep(10000);
        if(r==1){
          xp=await confirm("next?");
          if(xp==true){
@@ -137,17 +129,7 @@ async function run() {
      console.log(`Url Found!: ${ls}`);
      ul=ho+ls;
      console.log(ul);
-     //location.href=ul;
-        xfd=await fetch(ul,{
-        method:'GET',redirect : "manual",
-        headers:{
-         'Content-Type': 'application/x-www-form-urlencoded',
-         'Cookie':document.cookie
-        }}).then(re=>{
-            console.log(re.headers);
-            return re;
-        });
-     fxt=xfd.then(xl=>xl.text());
+     location.href=ul;
      mdv.style.background="green";
     }
   }
