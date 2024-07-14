@@ -130,7 +130,7 @@ async function run() {
 }
 function start(){
    st=document.createElement('style');
-   st.innerHTML=`.cco{z-index:99999;}.fsb{position:fixed;width:50px;height:50px;border-radius:50%;background:red;top:250px;right:100px;}.fsb:hover{background:orange;}.tbl{background:black;color:white;position:fixed;width:100%;max-height:200px;font-size:20px;font-weight:900;bottom:0px;overflow-y:scroll;}.tal{width:100%;background:white;color:black;height:200px;}.stb{background:black;color:white;border-radius:5px;font-weight:900;width:30%;text-align:center;}.stb:hover{background:white;color:red;}`;
+   st.innerHTML=`.cco{z-index:99999;}.fsb{position:fixed;width:50px;height:50px;border-radius:50%;background:red;top:250px;right:100px;}.fsb:hover{background:orange;}.tbl{background:black;color:white;position:fixed;width:100%;max-height:200px;font-size:20px;font-weight:900;bottom:0px;overflow-y:scroll;z-index:99999;}.tal{width:100%;background:white;color:black;height:200px;z-index:99999;}.stb{background:black;color:white;border-radius:5px;font-weight:900;width:30%;text-align:center;z-index:99999;}.stb:hover{background:white;color:red;}`;
    document.head.appendChild(st);
    dv=document.createElement('div');
    dv.className='cco';
