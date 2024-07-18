@@ -148,7 +148,9 @@ function start(){
         <br><div class="stb">Start</div>
     </div>
     <div class="tbl">
-      <div class="tbl-c"></div>
+      <div class="tbl-c">
+       <div class="item">Logs Will Be Here!!!</div>
+      </div>
     </div>`;
    document.body.appendChild(dv);
    mc=dv;
