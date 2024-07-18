@@ -2,7 +2,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 var sts=0;mc=null;var nlg;
 window.lg=function (nv) {
   let newChild = nlg.lastElementChild.cloneNode(true);
-  newChild.innerHTML = (nlg.children.length + 1)+`.  ${nv}`;
+  newChild.innerHTML = (nlg.children.length)+`.  ${nv}`;
   nlg.appendChild(newChild);
 }
 
