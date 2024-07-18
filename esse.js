@@ -1,7 +1,9 @@
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 var sts=0;mc=null;var nlg;
 window.lg=function (nv) {
-    nlg.innerText+=`${nv}\n`;
+  let newChild = nlg.lastElementChild.cloneNode(true);
+  newChild.innerHTML = (scrollerContent.children.length + 1)+`.  {nv}`;
+  nlg.appendChild(newChild);
 }
 
 async function runE(getUrl) {
@@ -136,7 +138,7 @@ async function run() {
 }
 function start(){
    st=document.createElement('style');
-    st.innerHTML=`.cco{z-index:999999;}.fsb{position:fixed;width:50px;height:50px;border-radius:50%;background:red;top:250px;right:100px;}.fsb:hover{background:orange;}.tbl{background:black;color:white;position:fixed;width:100%;max-height:200px;font-size:20px;font-weight:900;bottom:0px;overflow-y:scroll;}.tal{width:100%;background:white;color:black;height:200px;}.stb{background:black;color:white;border-radius:5px;font-weight:900;width:30%;text-align:center;}.stb:hover{background:white;color:red;}.inp{position:fixed;top:0px;width:100%;height:auto;}`;
+    st.innerHTML=`.cco{z-index:999999;}.fsb{position:fixed;width:50px;height:50px;border-radius:50%;background:red;top:250px;right:100px;}.fsb:hover{background:orange;}.tbl{background:black;color:white;position:fixed;width:100%;height:200px;font-size:10px;font-weight:900;bottom:0px;overflow: auto;display: flex;flex-direction: column-reverse;}.tbl .tbl-c.item {height: 20px;transform: translateZ(0);}.tal{width:100%;background:white;color:black;height:200px;}.stb{background:black;color:white;border-radius:5px;font-weight:900;width:30%;text-align:center;}.stb:hover{background:white;color:red;}.inp{position:fixed;top:0px;width:100%;height:auto;}`;
    document.head.appendChild(st);
    dv=document.createElement('div');
    dv.className='cco';
@@ -145,13 +147,15 @@ function start(){
         <textarea class="tal"></textarea>
         <br><div class="stb">Start</div>
     </div>
-    <div class="tbl"></div>`;
+    <div class="tbl">
+      <div class="tbl-c"></div>
+    </div>`;
    document.body.appendChild(dv);
    mc=dv;
    mdv=document.querySelector('.fsb');
    mdv.addEventListener('click',run);
    sta=document.querySelector('.stb');
-   nlg=document.querySelector('.tbl');
+   nlg=document.querySelector('.tbl-c');
    sta.addEventListener('click',Allg);
    alert("ready!!!!!");
 }
